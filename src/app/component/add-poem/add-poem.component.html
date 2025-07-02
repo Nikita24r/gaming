@@ -1,0 +1,92 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="form-container">
+        <h2>Create a New Blog Post</h2>
+        <form
+          #blogForm="ngForm"
+          (ngSubmit)="uploadImage(blogForm)"
+          id="blog_form"
+        >
+          <!-- Drag and Drop Image Upload -->
+          <div class="mb-3">
+            <label for="blogImage" class="form-label">Add Image</label>
+            <div
+              class="custom-dropzone"
+              ngx-dropzone
+              [accept]="'image/*'"
+              (change)="onSelect($event)"
+            >
+              <ngx-dropzone-label
+                >Drag and drop an image here, or click to select an
+                image</ngx-dropzone-label
+              >
+              <ngx-dropzone-image-preview
+                ngProjectAs="ngx-dropzone-preview"
+                [removable]="true"
+                *ngFor="let f of image"
+                [file]="f"
+                (removed)="onRemove(f)"
+              >
+              </ngx-dropzone-image-preview>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="category" class="form-label">Blog Category</label>
+            <select class="form-control" ngModel id="category" name="category">
+              <option value="" disabled selected>Select a category</option>
+              <option value="Sport">Sport</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Court-file">Court File</option>
+              <option value="Court-case">Court Case</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="title" class="form-label">Blog Title</label>
+            <input
+              type="text"
+              class="form-control"
+              ngModel
+              id="title"
+              name="title"
+              placeholder="Enter the blog title"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Blog Description</label>
+            <textarea
+              class="form-control"
+              ngModel
+              id="description"
+              name="description"
+              rows="5"
+              placeholder="Write your blog content here"
+            ></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="link" class="form-label">Website Link</label>
+            <input
+              type="url"
+              class="form-control"
+              ngModel
+              id="url"
+              name="url"
+              placeholder="https://example.com"
+            />
+          </div>
+
+          <div class="col-md-12 text-center">
+            <div class="loading" *ngIf="isLoading">Loading</div>
+            <div class="error-message"></div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

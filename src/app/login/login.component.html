@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="screen">
+    <div class="screen__content">
+      <!-- Logo Section -->
+      <div class="logo-container">
+        <a href="index.html" class="logo align-items-center">
+          <img src="assets/images/logos/booK.png" alt="Logo">
+          <!-- <span class="d-lg-block">Based only on Kids</span> -->
+          <span class="d-lg-block text-center">Login</span>
+        </a>
+      </div>
+
+      <div class="auth-container">
+        <div class="form-container">
+          <!-- Login Form -->
+          <form *ngIf="isLoginMode" [formGroup]="loginForm" (ngSubmit)="submit()" class="login">
+            <div class="login__field form-group">
+              <i class="Login__icon fas fa-user"></i>
+              <input id="loginEmail" formControlName="email" type="email" class="login__input form-control" placeholder="User name / Email" required />
+            </div>
+            <div class="login__field form-group">
+              <i class="Login__icon fas fa-lock"></i>
+              <input id="loginPassword" formControlName="password" type="password" class="login__input form-control" placeholder="Password" required />
+            </div>
+            <button class="button login__submit btn btn-primary w-100" type="submit">
+              <span class="button__text">Log In Now</span>
+              <i class="button__icons fas fa-chevron-right"></i>
+            </button>
+
+          </form>
+
+          <!-- Register Form -->
+          <form *ngIf="!isLoginMode" [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()" class="login">
+            <h2>Register</h2>
+            <div class="login__field form-group">
+              <i class="Login__icon fas fa-user"></i>
+              <input id="registerUsername" formControlName="username" type="text" class="login__input form-control" placeholder="Username" required />
+            </div>
+            <div class="login__field form-group">
+              <i class="Login__icon fas fa-envelope"></i>
+              <input id="registerEmail" formControlName="email" type="email" class="login__input form-control" placeholder="Email" required />
+            </div>
+            <div class="login__field form-group">
+              <i class="Login__icon fas fa-lock"></i>
+              <input id="registerPassword" formControlName="password" type="password" class="login__input form-control" placeholder="Password" required />
+            </div>
+            <button class="button login__submit btn btn-primary w-100" type="submit">
+              <span class="button__text">Register</span>
+              <i class="button__icons fas fa-chevron-right"></i>
+            </button>
+            <p class="toggle-auth" style="color: #f4c8c8;">
+              Already have an account? <a (click)="toggleMode()">Login here</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="screen__background">
+      <span class="screen__background__shape screen__background__shape4"></span>
+      <span class="screen__background__shape screen__background__shape3"></span>
+      <span class="screen__background__shape screen__background__shape2"></span>
+      <span class="screen__background__shape screen__background__shape1"></span>
+    </div>
+  </div>
+</div>

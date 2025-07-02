@@ -1,0 +1,51 @@
+/* Sidebar Toggle Styles */
+.left-sidebar {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mini sidebar state */
+[data-sidebartype="mini-sidebar"] .left-sidebar {
+  width: 60px;
+  overflow: hidden;
+}
+
+[data-sidebartype="mini-sidebar"] .left-sidebar .sidebar-nav .sidebar-item .sidebar-link .hide-menu {
+  display: none;
+}
+
+[data-sidebartype="mini-sidebar"] .left-sidebar .sidebar-nav .sidebar-item .sidebar-link {
+  padding-left: 15px;
+}
+
+/* Full sidebar state */
+[data-sidebartype="full"] .left-sidebar {
+  width: 250px;
+}
+
+/* Mobile responsive */
+@media (max-width: 1170px) {
+  .left-sidebar {
+    width: 0;
+    margin-left: -250px;
+  }
+  
+  .show-sidebar .left-sidebar {
+    width: 250px;
+    margin-left: 0;
+  }
+}
+
+/* Page wrapper adjustment */
+[data-sidebartype="mini-sidebar"] .page-wrapper {
+  margin-left: 60px;
+}
+
+[data-sidebartype="full"] .page-wrapper {
+  margin-left: 250px;
+}
+
+@media (max-width: 1170px) {
+  .page-wrapper {
+    margin-left: 0;
+  }
+}

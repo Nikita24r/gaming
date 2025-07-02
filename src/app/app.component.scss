@@ -1,0 +1,37 @@
+/* Add to your styles */
+.ngx-pagination {
+  padding-left: 0;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.ngx-pagination li {
+  margin: 0 5px;
+}
+
+.ngx-pagination a, 
+.ngx-pagination button {
+  color: #333;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.ngx-pagination a:hover, 
+.ngx-pagination button:hover {
+  background: #eee;
+}
+
+.ngx-pagination .current {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination-info {
+  margin-left: 15px;
+  font-size: 0.9rem;
+  color: #666;
+}
