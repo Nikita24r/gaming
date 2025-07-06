@@ -79,12 +79,12 @@ Vertical responsive layout
         .logo-text {
           display: none;
         }
-        &.expand-logo {
-          width: $sidebar-width-full;
-          .logo-text {
-            display: block;
-          }
-        }
+      //  &.expand-logo {
+      //     width: $sidebar-width-full;
+      //     .logo-text {
+      //       display: block;
+      //     }
+      //   }
       }
     }
   }
